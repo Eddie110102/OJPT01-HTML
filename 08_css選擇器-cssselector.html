@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>內部樣式表 + 選擇器</title>
+    <!-- 內部樣式表 -->
+    <style>
+      /* CSS的註解內容 */
+      /* 
+            CSS選擇器 {
+                CSS屬性名稱: CSS屬性值;
+                CSS屬性名稱: CSS屬性值;
+                CSS屬性名稱: CSS屬性值;
+                CSS屬性名稱: CSS屬性值;
+                CSS屬性名稱: CSS屬性值;
+            }
+        */
+
+      /* 標籤選擇器 Type / Tag  Selector */
+      h1,
+      h2,
+      h3 {
+        color: red;
+      }
+      p {
+        color: orange;
+      }
+
+      /* 類別選擇器 Class Selector */
+      /* 
+            .class屬性值 {
+                CSS屬性名稱: CSS屬性值;
+            }
+        */
+      .fruit1 {
+        color: yellowgreen;
+      }
+
+      .fontsize50{
+        font-size: 50px;
+      }
+      
+      .fwbold{
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>orange</h1>
+
+    <div class="fruit1 fontsize50 fwbold">orange</div>
+    <div>
+      123
+      <span class="fruit1">456</span>
+      <section>
+        <p class="fruit1">101112</p>
+      </section>
+      789
+    </div>
+
+    <h2>no class fruit1</h2>
+    <h3>orange</h3>
+    <p class="fruit1">banana</p>
+    <p>mango</p>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文字樣式 text css</title>
+    <!-- 外部相關聯的檔案或是連結引入 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Danfo&family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 內部樣式表設定 -->
+    <style>
+      /* 引用伺服器的字型 */
+      @font-face {
+        /* 下方選擇器要使用的方式 */
+        font-family: "Cursive_Script";
+        /* 檔案路徑 */
+        src: url(./fonts/Cursive_Script.ttf);
+      }
+
+      p {
+        font-size: 30px;
+      }
+      .font1 {
+        font-family: "新細明體";
+      }
+      .cs1 {
+        font-family: "Cursive_Script";
+      }
+      .gf1{
+        font-family: "Danfo",'Noto Sans TC';
+        font-style: italic;
+      }
+      .font7{
+        text-transform: capitalize;
+      }
+      .font8{
+        text-transform: uppercase;
+      }
+      .font9{
+        text-transform: lowercase;
+      }
+
+      .ul{
+        text-decoration-line: underline;
+      }
+      .ol{
+        text-decoration-line: overline;
+      }
+      .lt{
+        text-decoration-line: line-through;
+      }
+      .wavy{
+        text-decoration-style: wavy;
+      }
+      .dashed{
+        text-decoration-style: dashed;
+      }
+      .dotted{
+        text-decoration-style: dotted;
+      }
+      .red{
+        text-decoration-color: red;
+        color: red;
+      }
+      .blue{
+        text-decoration-color: blue;
+        color: blue;
+      }
+      .green{
+        text-decoration-color: green;
+        color: green;
+      }
+      .all{
+        text-decoration: line-through pink dashed;
+      }
+      .none{
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>文字字型 與 文字樣式</h2>
+    <p>中文字 abcdef</p>
+    <p class="font1">中文字 abcdef</p>
+    <p class="cs1">中文字 abcdef</p>
+    <p class="gf1">中文字 abcdef</p>
+
+    <hr>
+
+    <h2>文字大小寫轉換</h2>
+    <p>iSpan iSpan</p>
+    <p class="font7">iSpan iSpan</p>
+    <p class="font8">iSpan iSpan</p>
+    <p class="font9">iSpan iSpan</p>
+
+    <hr>
+
+    <h2>文字裝飾(線條)</h2>
+    <p class="ul">OJPT01</p>
+    <p class="ol">OJPT01</p>
+    <p class="lt">OJPT01</p>
+
+    <hr>
+    <h2>文字裝飾(線條樣式)</h2>
+    <p class="wavy ul">OJPT01</p>
+    <p class="dashed ul">OJPT01</p>
+    <p class="dotted ul">OJPT01</p>
+
+    <hr>
+    <h2>文字裝飾(線條顏色)</h2>
+    <p class="wavy ul red">OJPT01</p>
+    <p class="dashed ul blue">OJPT01</p>
+    <p class="dotted ul green">OJPT01</p>
+    <p class="all">文字裝飾速寫</p>
+    <a href="#" class="none">超連結預設樣式</a>
+  </body>
+</html>
