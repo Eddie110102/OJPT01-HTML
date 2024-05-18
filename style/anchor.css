@@ -15,7 +15,7 @@ a:active{
     color: yellowgreen;
 }
 
-/*  */
+/* 使用 class選擇器 */
 
 .anchor:link{
     text-decoration: none;
