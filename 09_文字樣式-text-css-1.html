@@ -30,55 +30,79 @@
       .cs1 {
         font-family: "Cursive_Script";
       }
-      .gf1{
-        font-family: "Danfo",'Noto Sans TC';
+      .gf1 {
+        font-family: "Danfo", "Noto Sans TC";
         font-style: italic;
       }
-      .font7{
+      .font7 {
         text-transform: capitalize;
       }
-      .font8{
+      .font8 {
         text-transform: uppercase;
       }
-      .font9{
+      .font9 {
         text-transform: lowercase;
       }
 
-      .ul{
+      .ul {
         text-decoration-line: underline;
       }
-      .ol{
+      .ol {
         text-decoration-line: overline;
       }
-      .lt{
+      .lt {
         text-decoration-line: line-through;
       }
-      .wavy{
+      .wavy {
         text-decoration-style: wavy;
       }
-      .dashed{
+      .dashed {
         text-decoration-style: dashed;
       }
-      .dotted{
+      .dotted {
         text-decoration-style: dotted;
       }
-      .red{
+      .red {
         text-decoration-color: red;
         color: red;
       }
-      .blue{
+      .blue {
         text-decoration-color: blue;
         color: blue;
       }
-      .green{
+      .green {
         text-decoration-color: green;
         color: green;
       }
-      .all{
+      .all {
         text-decoration: line-through pink dashed;
       }
-      .none{
+      .none {
         text-decoration: none;
+      }
+      .li2em {
+        line-height: 1.5em;
+      }
+      .left{
+        text-align: left;
+      }
+      .right{
+        text-align: right;
+      }
+      .center{
+        text-align: center;
+      }
+      .justify{
+        text-align: justify;
+        text-align-last: center;
+      }
+
+      .box{
+        background-color: lightblue;
+        height: 100px;
+        border: 2px solid black;
+        text-align: center;
+        line-height: 100px;
       }
     </style>
   </head>
@@ -89,7 +113,7 @@
     <p class="cs1">中文字 abcdef</p>
     <p class="gf1">中文字 abcdef</p>
 
-    <hr>
+    <hr />
 
     <h2>文字大小寫轉換</h2>
     <p>iSpan iSpan</p>
@@ -97,25 +121,89 @@
     <p class="font8">iSpan iSpan</p>
     <p class="font9">iSpan iSpan</p>
 
-    <hr>
+    <hr />
 
     <h2>文字裝飾(線條)</h2>
     <p class="ul">OJPT01</p>
     <p class="ol">OJPT01</p>
     <p class="lt">OJPT01</p>
 
-    <hr>
+    <hr />
     <h2>文字裝飾(線條樣式)</h2>
     <p class="wavy ul">OJPT01</p>
     <p class="dashed ul">OJPT01</p>
     <p class="dotted ul">OJPT01</p>
 
-    <hr>
+    <hr />
     <h2>文字裝飾(線條顏色)</h2>
     <p class="wavy ul red">OJPT01</p>
     <p class="dashed ul blue">OJPT01</p>
     <p class="dotted ul green">OJPT01</p>
     <p class="all">文字裝飾速寫</p>
     <a href="#" class="none">超連結預設樣式</a>
+
+    <hr />
+    <h2>文字行距</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+      consectetur sequi perferendis consequuntur rem impedit suscipit, iure nam
+      provident soluta aliquam odio quis voluptatem, est iusto magni! Dicta,
+      fugit eligendi! Dolor atque velit explicabo ea perferendis nihil commodi
+      quia, delectus excepturi, architecto id numquam, reprehenderit voluptatem
+      ipsum? Doloribus ullam, laborum omnis consequatur cumque ea aperiam
+      dolores, autem provident aspernatur labore?
+    </p>
+    <p class="li2em">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+      consectetur sequi perferendis consequuntur rem impedit suscipit, iure nam
+      provident soluta aliquam odio quis voluptatem, est iusto magni! Dicta,
+      fugit eligendi! Dolor atque velit explicabo ea perferendis nihil commodi
+      quia, delectus excepturi, architecto id numquam, reprehenderit voluptatem
+      ipsum? Doloribus ullam, laborum omnis consequatur cumque ea aperiam
+      dolores, autem provident aspernatur labore?
+    </p>
+    <hr />
+    <h2>文字水平對齊</h2>
+    <p class="left">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+      consectetur sequi perferendis consequuntur rem impedit suscipit, iure nam
+      provident soluta aliquam odio quis voluptatem, est iusto magni! Dicta,
+      fugit eligendi! Dolor atque velit explicabo ea perferendis nihil commodi
+      quia, delectus excepturi, architecto id numquam, reprehenderit voluptatem
+      ipsum? Doloribus ullam, laborum omnis consequatur cumque ea aperiam
+      dolores, autem provident aspernatur labore?
+    </p>
+    <p class="center">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+      consectetur sequi perferendis consequuntur rem impedit suscipit, iure nam
+      provident soluta aliquam odio quis voluptatem, est iusto magni! Dicta,
+      fugit eligendi! Dolor atque velit explicabo ea perferendis nihil commodi
+      quia, delectus excepturi, architecto id numquam, reprehenderit voluptatem
+      ipsum? Doloribus ullam, laborum omnis consequatur cumque ea aperiam
+      dolores, autem provident aspernatur labore?
+    </p>
+    <p class="right">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+      consectetur sequi perferendis consequuntur rem impedit suscipit, iure nam
+      provident soluta aliquam odio quis voluptatem, est iusto magni! Dicta,
+      fugit eligendi! Dolor atque velit explicabo ea perferendis nihil commodi
+      quia, delectus excepturi, architecto id numquam, reprehenderit voluptatem
+      ipsum? Doloribus ullam, laborum omnis consequatur cumque ea aperiam
+      dolores, autem provident aspernatur labore?
+    </p>
+    <p class="justify">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+      consectetur sequi perferendis consequuntur rem impedit suscipit, iure nam
+      provident soluta aliquam odio quis voluptatem, est iusto magni! Dicta,
+      fugit eligendi! Dolor atque velit explicabo ea perferendis nihil commodi
+      quia, delectus excepturi, architecto id numquam, reprehenderit voluptatem
+      ipsum? Doloribus ullam, laborum omnis consequatur cumque ea aperiam
+      dolores, autem provident aspernatur labore?
+    </p>
+    <hr>
+    <h2>文字垂直對齊</h2>
+    <div class="box">單行文字</div>
+    <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe quo quod modi similique laboriosam aperiam perspiciatis fuga. Quisquam a ducimus quasi neque iusto quam quae minima quas rerum? Molestiae, ratione.
+    Soluta ipsa facilis eos, totam rerum officiis, expedita quis, quibusdam facere sed commodi. Cupiditate ab impedit voluptatum, recusandae dolores suscipit eaque velit beatae deserunt architecto facere nam reiciendis, id fugit.</div>
   </body>
 </html>
