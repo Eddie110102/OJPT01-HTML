@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nav.css" />
+    <title>彈性盒子flexbox</title>
+    <style>
+      #box {
+        border: 2px solid lightsalmon;
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        height: 150px;
+        flex-wrap: wrap;
+      }
+      .item {
+        width: 50px;
+        /* height: 50px; */
+        border: 1px solid blue;
+        background-color: lightblue;
+        font-size: 20px;
+      }
+      .flexStart {
+        align-content: flex-start;
+      }
+      .center {
+        align-content: center;
+      }
+      .flexEnd {
+        align-content: flex-end;
+      }
+      .spaceAround {
+        align-content: space-around;
+      }
+      .spaceBetween {
+        align-content: space-between;
+      }
+      .stretch {
+        align-content: stretch;
+      }
+      .stretchwh .lh50 {
+        height: 50px;
+      }
+      .stretchwh .lh70 {
+        height: 70px;
+      }
+      .stretchwh .lh100 {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="nav"></ul>
+    <main>
+      <h1>align-content屬性(多行對齊) - 設定flexbox中內容的對齊方式(切軸)</h1>
+      <div>
+        <button id="stretch" class="active">stretch 屬性值 (預設)</button>
+        <button id="stretchwh">stretch 屬性值 (有高度)</button>
+        <button id="flexStart">flex-start 屬性值</button>
+        <button id="flexEnd">flex-end 屬性值</button>
+        <button id="center">center 屬性值</button>
+        <button id="spaceAround">space-around 屬性值</button>
+        <button id="spaceBetween">space-between 屬性值</button>
+      </div>
+      <h2>解釋：<span id="description">自動填滿父層容器高度 (預設)</br>(item沒有設定高度)</span></h2>
+      <div id="box">
+        <div class="item lh50">item1</div>
+        <div class="item lh100">item2</div>
+        <div class="item lh70">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item">item9</div>
+      </div>
+    </main>
+    <script src="./nav.js"></script>
+    <script>
+      const btns = document.querySelectorAll("button");
+      const box = document.getElementById("box");
+      const description = document.getElementById("description");
+      const desText = {
+        flexStart: "對齊切軸起點",
+        flexEnd: "對齊切軸終點",
+        center: "對齊切軸中心",
+        spaceAround: "上下留白，平均分配間隔",
+        spaceBetween: "上下不留白，平均分配間隔",
+        stretch: "自動填滿父層容器高度 (預設)</br>(item沒有設定高度)",
+        stretchwh:
+          "自動填滿父層容器高度</br>(item有設定高度，會影響實際的stretch結果)",
+      };
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", (event) => {
+          toggle(event, event.target.id);
+          for (let i = 0; i < btns.length; i++) {
+            btns[i].classList.remove("active");
+          }
+          event.target.className = "active";
+        });
+      }
+      function toggle(e, id) {
+        box.className = id;
+        description.innerHTML = desText[id];
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nav.css" />
+    <title>彈性盒子flexbox</title>
+    <style>
+      #box,.box {
+        border: 2px solid lightsalmon;
+        display: flex;
+        /* width: 400px; */
+        justify-content: space-around;
+      }
+      .item {
+        width: 50px;
+        height: 50px;
+        border: 1px solid blue;
+        background-color: lightblue;
+        font-size: 20px;
+      }
+      /* 1. flex-grow 加上下面屬性的元素會自動把剩餘空間拿來使用 */
+      .flexGrow .fg1 {
+        flex-grow: 1;
+      }
+
+      /* 2. flex-shrink 先設定容器寬度及內容寬度(內容寬度總寬要大於容器)，有綁上flex-shrink:0;的不會被壓縮 */
+      .flexShrink {
+        width: 250px;
+      }
+      .flexShrink .width200 {
+        width: 100px;
+      }
+      .flexShrink .fs0 {
+        flex-shrink: 0;
+      }
+      /* 3. flex-basis 設定的數值大於剩餘寬度時，會自動填滿 */
+      /* 寬度權重： max-width/min-width > flex-basis > width */
+      .flexBasis .fb250 {
+        flex-basis: 250px;
+      }
+      /* 4. align-self 設定高度後，使用align-self個別對齊 */
+      .alignSelf{
+        height: 200px;
+      }
+      .alignSelf .as-center {
+        align-self: center;
+      }
+      /* 5. order 個項目前後排序，與座標X軸原理相同(負數在左，正數在右) */
+      .order .o10 {
+        order: -10;
+      }
+      .order .o9 {
+        order: 9;
+      }
+    </style>
+  </head>
+  <body>
+      <ul id="nav"></ul>
+    <main>
+      <h1>flex-box中的item的相關設定</h1>
+      <div>
+        <button id="flexGrow" class="active">flex-grow 屬性值</button>
+        <button id="flexShrink">flex-shrink 屬性值</button>
+        <button id="flexBasis">flex-basis 屬性值</button>
+        <button id="alignSelf">align-self 屬性值</button>
+        <button id="order">order 屬性值</button>
+      </div>
+      <h2>對照組：<span id="originDesc">item未設定參數（預設為0，不伸展）</span></h2>
+      <div class="box" id="default">
+        <div class="item width200">item1</div>
+        <div class="item width200">item2</div>
+        <div class="item width200">item3</div>
+      </div>
+      <h2>解釋：<span id="description">當父層寬度有剩餘空間時，設定為1的item會自動填滿(item1)</span></h2>
+      <div class="flexGrow" id="box">
+        <div class="item fg1 width200 o9">item1</div>
+        <div class="item width200 fb250 as-center o10">item2</div>
+        <div class="item width200 fs0">item3</div>
+      </div>
+    </main>
+    <script src="./nav.js"></script>
+    <script>
+      const btns = document.querySelectorAll("button");
+      const box = document.getElementById("box");
+      const origin = document.getElementById("default");
+      const description = document.getElementById("description");
+      const originDesc = document.getElementById("originDesc");
+      const originDescText = {
+        flexGrow: "item未設定參數（預設為0，不伸展）",
+        flexShrink: "item未設定參數（預設為1，當寬度不夠時會自動壓縮item寬度）",
+        flexBasis: "item未設定參數（自動抓取item的width值）",
+        alignSelf: "item未設定參數（父層容器要先設定高度）",
+        order: "item未設定參數（與座標X軸原理相同，負數在左，正數在右）",
+      }
+      const desText = {
+        flexGrow: "當父層寬度有剩餘空間時，設定為1的item會自動填滿(item1)",
+        flexShrink: "當父層寬度空間不足時，設定為0的item不會壓縮(item3)",
+        flexBasis: "設定元素寬度，當數值大於剩餘寬度時會自動填滿(item2)",
+        alignSelf: "個別元素對齊方式(item2)",
+        order: "個項目前後排序(item2及item3)",
+      };
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", (event) => {
+          toggle(event, event.target.id);
+          for (let i = 0; i < btns.length; i++) {
+            btns[i].classList.remove("active");
+          }
+          event.target.className = "active";
+        });
+      }
+      function toggle(e, id) {
+        box.className = id;
+        origin.className =  `box ${id}`
+        description.innerHTML = desText[id];
+        originDesc.innerHTML = originDescText[id];
+      }
+    </script>
+  </body>
+</html>

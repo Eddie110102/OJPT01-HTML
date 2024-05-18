@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nav.css" />
+    <title>彈性盒子flexbox</title>
+    <style>
+      #box {
+        border: 2px solid lightsalmon;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 300px;
+      }
+      .item {
+        width: 50px;
+        height: 50px;
+        border: 1px solid blue;
+        background-color: lightblue;
+        font-size: 20px;
+      }
+      .nowrap {
+        flex-wrap: nowrap;
+      }
+      .wrap{
+        flex-wrap:wrap;
+      }
+      .wrapReverse{
+        flex-wrap: wrap-reverse;
+      }
+    </style>
+  </head>
+  <body>
+      <ul id="nav"></ul>
+    <main>
+      <h1>flex-wrap屬性 - 設定flex-box中內容的換行方式</h1>
+      <div>
+        <button id="nowrap" class="active">nowrap 屬性值(預設)</button>
+        <button id="wrap">wrap 屬性值</button>
+        <button id="wrapReverse">wrap-reverse 屬性值</button>
+      </div>
+      <h2>解釋：<span id="description">不換行</span></h2>
+      <div class="box nowrap" id="box">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item">item9</div>
+      </div>
+    </main>
+    <script src="./nav.js"></script>
+    <script>
+      const btns = document.querySelectorAll("button");
+      const box = document.getElementById("box");
+      const description = document.getElementById("description");
+      const desText = {
+        nowrap: "不換行",
+        wrap: "換行，由切軸起點開始",
+        wrapReverse: "換行，由切軸終點開始",
+      };
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", (event) => {
+          toggle(event, event.target.id);
+          for (let i = 0; i < btns.length; i++) {
+          btns[i].classList.remove('active')
+          }
+          event.target.className = 'active'
+        });
+      }
+      function toggle(e, id) {
+        box.className = id;
+        description.innerText = desText[id];
+      }
+    </script>
+  </body>
+</html>

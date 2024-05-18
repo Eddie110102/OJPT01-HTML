@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nav.css" />
+    <title>彈性盒子flexbox</title>
+    <style>
+      #box {
+        border: 2px solid lightsalmon;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        /* width: 400px; */
+        /* box有給高度，item沒有給高度預設屬性會自動長滿 */
+        height: 150px;
+      }
+      .item {
+        width: 50px;
+        /* height: 50px; */
+        border: 1px solid blue;
+        background-color: lightblue;
+        font-size: 20px;
+      }
+      .flexStart {
+        align-items: flex-start;
+      }
+      .center {
+        align-items: center;
+      }
+      .flexEnd {
+        align-items: flex-end;
+      }
+      /* baseline 預設對齊文字 (先給三個div不同高度) */
+      .baseline {
+        align-items: baseline;
+      }
+      .baseline .lh50 {
+        height: 50px;
+        line-height: 50px;
+      }
+      .baseline .lh70 {
+        height: 70px;
+        line-height: 70px;
+      }
+      .baseline .lh100 {
+        height: 100px;
+        line-height: 100px;
+      }
+      .stretch {
+        align-items: stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="nav"></ul>
+    <main>
+      <h1>align-items屬性 - 設定flexbox中內容的單行對齊方式(切軸)</h1>
+      <div>
+        <button id="stretch" class="active">stretch 屬性值(預設)</button>
+        <button id="flexStart">flex-start 屬性值</button>
+        <button id="center">center 屬性值</button>
+        <button id="flexEnd">flex-end 屬性值</button>
+        <button id="baseline">baseline 屬性值</button>
+      </div>
+      <h2>
+        解釋：<span id="description"
+          >如果item有設定高度，會影響實際的stretch結果</span
+        >
+      </h2>
+      <div class="flex-start" id="box">
+        <div class="item lh50">item1</div>
+        <div class="item lh100">item2</div>
+        <div class="item lh70">item3</div>
+      </div>
+    </main>
+    <script src="./nav.js"></script>
+    <script>
+      const btns = document.querySelectorAll("button");
+      const box = document.getElementById("box");
+      const description = document.getElementById("description");
+      const desText = {
+        flexStart: "對齊切軸起點",
+        flexEnd: "對齊切軸終點",
+        center: "對齊切軸中心",
+        stretch: "如果item有設定高度，會影響實際的stretch結果",
+        baseline: "對齊文字 三個item設定不同高度，並且文字置中",
+      };
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", (event) => {
+          toggle(event, event.target.id);
+          for (let i = 0; i < btns.length; i++) {
+            btns[i].classList.remove("active");
+          }
+          event.target.className = "active";
+        });
+      }
+      function toggle(e, id) {
+        box.className = id;
+        description.innerHTML = desText[id];
+      }
+    </script>
+  </body>
+</html>

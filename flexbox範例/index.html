@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>彈性盒子flexbox</title>
+    <link rel="stylesheet" href="nav.css" />
+    <style>
+      #box {
+        border: 2px solid lightsalmon;
+      }
+      .item {
+        width: 50px;
+        height: 50px;
+        border: 1px solid blue;
+        background-color: lightblue;
+        font-size: 20px;
+        padding: 5px;
+      }
+      .flex {
+        display: flex;
+      }
+      .inlineFlex {
+        display: inline-flex;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="nav"></ul>
+    <main>
+      <h1>display屬性 - 設定彈性盒子flexbox</h1>
+      <div>
+        <button id="block" class="active">預設 block屬性值</button>
+        <button id="flex">flex 屬性值</button>
+        <button id="inlineFlex">inline-flex 屬性值</button>
+      </div>
+      <h2>解釋：<span id="description">預設屬性(block)</span></h2>
+      <div id="box">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+      </div>
+    </main>
+    <script src="./nav.js"></script>
+    <script>
+      const btns = document.querySelectorAll("button");
+      const box = document.getElementById("box");
+      const description = document.getElementById("description");
+      const desText = {
+        block: "預設屬性(block)",
+        flex: "flexbox容器大小不變",
+        inlineFlex: "flexbox容器大小隨著內容(items)尺寸而定",
+      };
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", (event) => {
+          toggle(event, event.target.id);
+          for (let i = 0; i < btns.length; i++) {
+          btns[i].classList.remove('active')
+          }
+          event.target.className = 'active'
+        });
+      }
+      function toggle(e, id) {
+        box.className = id;
+        description.innerText = desText[id];
+      }
+    </script>
+  </body>
+</html>

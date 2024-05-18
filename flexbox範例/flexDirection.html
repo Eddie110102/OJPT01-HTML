@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nav.css" />
+    <title>彈性盒子flexbox</title>
+    <style>
+      #box {
+        border: 2px solid lightsalmon;
+        display: flex;
+      }
+      .item {
+        width: 50px;
+        height: 50px;
+        border: 1px solid blue;
+        background-color: lightblue;
+        font-size: 20px;
+        padding: 5px;
+      }
+      .row {
+        flex-direction: row;
+      }
+      .rowReverse {
+        flex-direction: row-reverse;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .columnReverse {
+        flex-direction: column-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="nav"></ul>
+    <main>
+      <h1>flex-direction屬性 - 設定flexbox中內容的出發方向 </h1>
+      <div>
+        <button id="row" class="active">row 屬性值(預設)</button>
+        <button id="rowReverse">row-reverse 屬性值</button>
+        <button id="column">column 屬性值</button>
+        <button id="columnReverse">column-reverse 屬性值</button>
+      </div>
+      <h2>解釋：<span id="description">設定flexbox內容由主軸起點開始(左到右)</span></h2>
+      <div class="row" id="box">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+      </div>
+    </main>
+    <script src="./nav.js"></script>
+    <script>
+      const btns = document.querySelectorAll("button");
+      const box = document.getElementById("box");
+      const description = document.getElementById("description");
+      const desText = {
+        row: "設定flexbox內容由主軸起點開始(左到右)",
+        rowReverse: " 設定flexbox內容由主軸終點開始(右到左)",
+        column: " 設定flexbox內容由主軸起點開始(上到下)",
+        columnReverse: " 設定flexbox內容由主軸起點開始(下到上)",
+      };
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", (event) => {
+          toggle(event, event.target.id);
+          for (let i = 0; i < btns.length; i++) {
+          btns[i].classList.remove('active')
+          }
+          event.target.className = 'active'
+        });
+      }
+      function toggle(e, id) {
+        box.className = id;
+        description.innerText = desText[id];
+      }
+    </script>
+  </body>
+</html>

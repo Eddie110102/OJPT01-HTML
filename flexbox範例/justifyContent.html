@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nav.css" />
+    <title>彈性盒子flexbox</title>
+    <style>
+      #box {
+        border: 2px solid lightsalmon;
+        display: flex;
+        flex-direction: row;
+      }
+      .item {
+        width: 50px;
+        height: 50px;
+        border: 1px solid blue;
+        background-color: lightblue;
+        font-size: 20px;
+        padding: 5px;
+      }
+      .flexStart {
+        justify-content: flex-start;
+      }
+      .flexEnd {
+        justify-content: flex-end;
+      }
+      .center {
+        justify-content: center;
+      }
+      .spaceAround {
+        justify-content: space-around;
+      }
+      .spaceBetween {
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="nav"></ul>
+    <main>
+      <h1>justify-content屬性 - 設定flexbox中內容的對齊方式(主軸)</h1>
+      <div>
+        <button id="flexStart" class="active">flex-start 屬性值(預設)</button>
+        <button id="flexEnd">flex-end 屬性值</button>
+        <button id="center">center 屬性值</button>
+        <button id="spaceAround">space-around 屬性值</button>
+        <button id="spaceBetween">space-between 屬性值</button>
+      </div>
+      <h2>解釋：<span id="description">從主軸起點開始</span></h2>
+      <div class="flex-start" id="box">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+      </div>
+    </main>
+    <script src="./nav.js"></script>
+    <script>
+      const btns = document.querySelectorAll("button");
+      const box = document.getElementById("box");
+      const description = document.getElementById("description");
+      const desText = {
+        flexStart: "從主軸起點開始",
+        flexEnd: "從主軸終點開始",
+        center: "置中對齊",
+        spaceAround: "左右留空(尺寸為中間空格的0.5倍)，並平均分散",
+        spaceBetween: "左右不留空並平均分散",
+      };
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", (event) => {
+          toggle(event, event.target.id);
+          for (let i = 0; i < btns.length; i++) {
+            btns[i].classList.remove("active");
+          }
+          event.target.className = "active";
+        });
+      }
+      function toggle(e, id) {
+        box.className = id;
+        description.innerText = desText[id];
+      }
+    </script>
+  </body>
+</html>
