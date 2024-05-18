@@ -1,0 +1,38 @@
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color: gray;
+}
+
+a:hover{
+    color: salmon;
+    text-decoration: underline solid salmon;
+}
+
+a:active{
+    color: yellowgreen;
+}
+
+/*  */
+
+.anchor:link{
+    text-decoration: none;
+    color: aquamarine;
+}
+
+.anchor:visited{
+    color: red;
+}
+
+
+.anchor:hover{
+    color: purple;
+    text-decoration: underline solid purple;
+}
+
+
+.anchor:active{
+    color: yellow;
+}
