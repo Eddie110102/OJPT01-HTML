@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>方塊模型 box model</title>
+    <style>
+      img,
+      div,
+      span {
+        /* 寬度、高度 */
+        width: 300px;
+        height: 150px;
+
+        /* 邊框 */
+        border: 5px solid black;
+
+        /* 倒圓角 */
+        /* border-radius: 30px 50px 70px 100px; */
+
+        /* 內邊距 */
+        padding: 20px;
+        /* padding-left: 30px; */
+
+        /* 背景色 */
+        background-color: pink;
+
+        /* 外邊距 */
+        margin: 20px;
+
+        /* 區塊元素水平置中 */
+        margin: 20px auto;
+
+        /* 元素中文字水平置中 */
+        text-align: center;
+      }
+
+      .circle {
+        width: 50px;
+        height: 50px;
+        border: 5px solid black;
+        border-radius: 50%;
+      }
+
+      .borderbox {
+        box-sizing: border-box;
+      }
+
+      .inlinebox{
+        font-size: 0;
+      }
+      .inlinebox span{
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./images/pikachu.jpg" alt="" />
+    <img src="./images/pikachu.jpg" alt="" class="borderbox" />
+    <img src="./images/pikachu.jpg" alt="" />
+    <img src="./images/pikachu.jpg" alt="" />
+
+    <hr />
+
+    <h2>畫面上做出正圓型</h2>
+    <div class="circle"></div>
+
+    <hr />
+
+    <h2>區塊元素 垂直向margin會重疊</h2>
+    <div style="margin-bottom: 70px">區塊容器</div>
+    <div style="margin-top: 100px">區塊容器</div>
+    <div>區塊容器</div>
+    <div>區塊容器</div>
+
+    <h2>行內元素 沒有垂直向margin、水平向margin不重疊</h2>
+    <span>行內容器</span>
+    <span>行內容器</span>
+    <span>行內容器</span>
+    <span>行內容器</span>
+    <br />
+    <br />
+    <br />
+    <h2>移除行內元素之間的空白</h2>
+    <!-- 方式一： -->
+    <!-- <span>行內容器</span><span>行內容器</span><span>行內容器</span
+    ><span>行內容器</span> -->
+
+    <!-- 方式二： -->
+    <section class="inlinebox">
+      <span>行內容器</span>
+      <span>行內容器</span>
+      <span>行內容器</span>
+      <span>行內容器</span>
+    </section>
+  </body>
+</html>
