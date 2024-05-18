@@ -5,98 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>表格元素 table</title>
     <style>
-        .table1{
-            width: 1200px;
-            border: 5px solid black;
-            border-collapse: collapse;
-            /* 水平置中 */
-            margin: auto;
-        }
+      .table1 {
+        width: 1200px;
+        border: 5px solid black;
+        border-collapse: collapse;
+        /* 水平置中 */
+        margin: auto;
+      }
 
-        .table1 th,.table1 td{
-            border: 2px solid gray;
-            height: 50px;
-            text-align: center;
-        }
-        thead tr{
-            background-color: #9A0036;
-            color: white;
-        }
-        tbody tr:nth-child(2n+1){
-            background-color: rgb(195, 195, 195);
-        }
-        tbody tr:hover{
-            background-color: pink;
-        }
+      .table1 th,
+      .table1 td {
+        border: 2px solid gray;
+        height: 50px;
+        text-align: center;
+      }
+      thead tr {
+        background-color: #9a0036;
+        color: white;
+      }
+      tbody tr:nth-child(2n + 1) {
+        background-color: rgb(195, 195, 195);
+      }
+      tbody tr:hover {
+        background-color: pink;
+      }
     </style>
   </head>
   <body>
-        <table class="table1">
-          <caption>
-            <h2>表格標題</h2>
-          </caption>
-          <!-- 欄位標題 -->
-          <thead>
-            <tr>
-              <!-- th{欄位標題$}*14 -->
-              <th rowspan="2">幣別</th>
-              <th colspan="2">現金匯率</th>
-              <!-- <th>欄位標題03</th> -->
-              <th colspan="2">即期匯率</th>
-              <!-- <th>欄位標題05</th> -->
-              <th rowspan="2">遠期匯率</th>
-              <th rowspan="2">歷史匯率</th>
-            </tr>
-            <tr>
-              <th>本行買入</th>
-              <th>本行賣出</th>
-              <th>本行買入</th>
-              <th>本行賣出</th>
-              <!-- <th>欄位標題12</th>
+    <table class="table1">
+      <caption>
+        <h2>表格標題</h2>
+      </caption>
+      <!-- 欄位標題 -->
+      <thead>
+        <tr>
+          <!-- th{欄位標題$}*14 -->
+          <th rowspan="2">幣別</th>
+          <th colspan="2">現金匯率</th>
+          <!-- <th>欄位標題03</th> -->
+          <th colspan="2">即期匯率</th>
+          <!-- <th>欄位標題05</th> -->
+          <th rowspan="2">遠期匯率</th>
+          <th rowspan="2">歷史匯率</th>
+        </tr>
+        <tr>
+          <th>本行買入</th>
+          <th>本行賣出</th>
+          <th>本行買入</th>
+          <th>本行賣出</th>
+          <!-- <th>欄位標題12</th>
               <th>欄位標題13</th>
               <th>欄位標題14</th> -->
-            </tr>
-          </thead>
-          <!-- 表格內容 -->
-          <tbody>
-            <tr>
-              <td>內容儲存格01</td>
-              <td>內容儲存格02</td>
-              <td>內容儲存格03</td>
-              <td>內容儲存格04</td>
-              <td>內容儲存格05</td>
-              <td>內容儲存格06</td>
-              <td>內容儲存格07</td>
-            </tr>
-            <tr>
-              <td>內容儲存格08</td>
-              <td>內容儲存格09</td>
-              <td>內容儲存格10</td>
-              <td rowspan="2" colspan="2">內容儲存格11</td>
-              <!-- <td>內容儲存格12</td> -->
-              <td>內容儲存格13</td>
-              <td>內容儲存格14</td>
-            </tr>
-            <tr>
-              <td>內容儲存格15</td>
-              <td>內容儲存格16</td>
-              <td>內容儲存格17</td>
-              <!-- <td>內容儲存格18</td> -->
-              <!-- <td>內容儲存格19</td> -->
-              <td>內容儲存格20</td>
-              <td>內容儲存格21</td>
-            </tr>
-            <tr>
-              <td>內容儲存格22</td>
-              <td>內容儲存格23</td>
-              <td>內容儲存格24</td>
-              <td>內容儲存格25</td>
-              <td>內容儲存格26</td>
-              <td>內容儲存格27</td>
-              <td>內容儲存格28</td>
-            </tr>
-          </tbody>
-          <!-- <tfoot></tfoot> -->
-        </table>
+        </tr>
+      </thead>
+      <!-- 表格內容 -->
+      <tbody id="body">
+        <tr>
+          <td>內容儲存格01</td>
+          <td>內容儲存格02</td>
+          <td>內容儲存格03</td>
+          <td>內容儲存格04</td>
+          <td>內容儲存格05</td>
+          <td>內容儲存格06</td>
+          <td>內容儲存格07</td>
+        </tr>
+        <tr>
+          <td>內容儲存格08</td>
+          <td>內容儲存格09</td>
+          <td>內容儲存格10</td>
+          <td rowspan="2" colspan="2">內容儲存格11</td>
+          <!-- <td>內容儲存格12</td> -->
+          <td>內容儲存格13</td>
+          <td>內容儲存格14</td>
+        </tr>
+        <tr>
+          <td>內容儲存格15</td>
+          <td>內容儲存格16</td>
+          <td>內容儲存格17</td>
+          <!-- <td>內容儲存格18</td> -->
+          <!-- <td>內容儲存格19</td> -->
+          <td>內容儲存格20</td>
+          <td>內容儲存格21</td>
+        </tr>
+        <tr>
+          <td>內容儲存格22</td>
+          <td>內容儲存格23</td>
+          <td>內容儲存格24</td>
+          <td>內容儲存格25</td>
+          <td>內容儲存格26</td>
+          <td>內容儲存格27</td>
+          <td>內容儲存格28</td>
+        </tr>
+      </tbody>
+      <!-- <tfoot></tfoot> -->
+    </table>
+
+    <script>
+      // 抓到資料
+      const data = [
+        {
+          currency: "美金 (USD)",
+          cashBuyingRate: "31.81",
+          cashSellingRate: "32.48",
+          buyingSpotRate: "32.16",
+          sellingSpotRate: "32.26",
+        },
+        {
+          currency: "港幣 (HKD)",
+          cashBuyingRate: "3.972	",
+          cashSellingRate: "4.176",
+          buyingSpotRate: "4.098",
+          sellingSpotRate: "4.158",
+        },
+      ];
+
+      const body = document.querySelector('#body')
+      // 處理資料
+      let res = '' 
+      for(let i=0; i<data.length;i++){
+        res += `<tr>
+          <td>${data[i].currency}</td>
+          <td>${data[i].cashBuyingRate}</td>
+          <td>${data[i].cashSellingRate}</td>
+          <td>${data[i].buyingSpotRate}</td>
+          <td>${data[i].sellingSpotRate}</td>
+          <td>查詢</td>
+          <td>查詢</td>
+        </tr>`
+      }
+
+      // 將資料塞進html畫面中
+      body.innerHTML = res
+    </script>
   </body>
 </html>
