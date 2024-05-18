@@ -1,0 +1,19 @@
+* {
+    color: yellow;
+  }
+  h1 {
+    color: red;
+    font-size: 100px;
+  }
+
+  .font2.font3{
+    color: purple;
+  }
+
+  .font1 {
+    color: blue;
+  }
+  
+  #font2 {
+    color: green;
+  }

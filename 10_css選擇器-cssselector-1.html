@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 30px;
+        }
+      #theH1 {
+        color: red;
+      }
+      #theH2{
+        color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="theH1">Google</h1>
+    <h2 id="theH2">Yahoo</h2>
+    <div>123</div>
+    <p>456</p>
+    <a href="#">789</a>
+    <ul>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+    </ul>
+
+    <script>
+      const element = document.querySelector("#theH1");
+      element.style.color = "blue";
+    </script>
+  </body>
+</html>
