@@ -1,0 +1,27 @@
+.float_header{
+    padding: 20px;
+    height: 50px;
+    border: 2px solid black;
+}
+.float_header .logo{
+    height: 50px;
+    float: left;
+}
+.float_header .right{
+    float: right;
+    line-height: 50px;
+}
+.float_header .nav{
+    text-align: center;
+    line-height: 50px;
+}
+
+.float_header .nav a{
+    color: black;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+a{
+    text-decoration: none;
+}
