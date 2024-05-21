@@ -49,8 +49,10 @@
         <br>
         <input type="submit" value="送出">
     </form>
-
     <script>
+        // 畫面一開始就先顯示目前的數值
+        rangeOutput.innerText = range.value;
+        // range如果有做更動，調整畫面上range右側的數值
         range.addEventListener('input',()=>{
             rangeOutput.innerText = range.value;
         })
