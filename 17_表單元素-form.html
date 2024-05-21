@@ -25,51 +25,84 @@
         .btn1 > * {
             margin: 0 10px;
         }
+
+        /* 控制項群組樣式 */
+        fieldset{
+            width: 500px;
+            margin: 20px;
+            border: 2px solid gray;
+            border-radius: 35px;
+        }
+
+        legend{
+            padding: 5px 15px;
+            margin-left: 20px;
+        }
+
+        /* 將每個群組中最後一個控制項的下底線隱藏 */
+        fieldset > :last-child{
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
     </style>
 </head>
 <body>
-    <form action="#" method="get" enctype="application/x-www-form-urlencoded">
-        <div class="q1">
-            <!-- 單行文字控制項 -->
-            <label for="myName" class="t1">姓名：</label>
-            <input type="text" name="userName" id="myName" value="" placeholder="請輸入您的姓名" >
-        </div>
-        <div class="q1">
-            <!-- 密碼控制項 -->
-            <label for="myPassword" class="t1">密碼：</label>
-            <input type="password" name="userPassword" id="myPassword" value="" placeholder="請輸入密碼" maxlength="10" minlength="6">
-        </div>
-        <div class="q1">
-            <!-- 多行文字控制項 -->
-            <label for="myMemo" class="t1">備忘錄：</label>
-            <textarea name="userMemo" id="myMemo" cols="30" rows="10" placeholder="請輸入文字，最常不可超過500字。"></textarea>
-        </div>
-        <div class="q1">
-            <!-- 單選控制項 -->
-            <span class="t1">性別：</span>
-            <label><input type="radio" name="userGender" value="male">男性</label>
-            <label><input type="radio" name="userGender" value="female">女性</label>
-            <label><input type="radio" name="userGender" value="hidden" checked>不顯示</label>
-        </div>
-        <div class="q1">
-            <!-- 複選控制項 -->
-            <span class="t1">興趣：</span>
-            <label><input type="checkbox" name="userInterest" value="游泳">游泳</label>
-            <label><input type="checkbox" name="userInterest" value="閱讀" checked>閱讀</label>
-            <label><input type="checkbox" name="userInterest" value="電影">電影</label>
-            <label><input type="checkbox" name="userInterest" value="音樂" checked>音樂</label>
-        </div>
-        <div class="q1">
-            <!-- 下拉式選單 -->
-            <label for="myCity" class="t1">縣市：</label>
-            <select name="userCity" id="myCity">
-                <option value="基隆市">基隆市</option>
-                <option value="新北市">新北市</option>
-                <option value="台北市">台北市</option>
-                <option value="高雄市" selected>高雄市</option>
-                <option value="台南市">台南市</option>
-            </select>
-        </div>
+    <form action="#" method="get" enctype="multipart/form-data">
+        <fieldset>
+            <legend>基本資料（一）</legend>
+            <div class="q1">
+                <!-- 單行文字控制項 -->
+                <label for="myName" class="t1">姓名：</label>
+                <input type="text" name="userName" id="myName" value="" placeholder="請輸入您的姓名" >
+            </div>
+            <div class="q1">
+                <!-- 密碼控制項 -->
+                <label for="myPassword" class="t1">密碼：</label>
+                <input type="password" name="userPassword" id="myPassword" value="" placeholder="請輸入密碼" maxlength="10" minlength="6">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>基本資料（二）</legend>
+            <div class="q1">
+                <!-- 單選控制項 -->
+                <span class="t1">性別：</span>
+                <label><input type="radio" name="userGender" value="male">男性</label>
+                <label><input type="radio" name="userGender" value="female">女性</label>
+                <label><input type="radio" name="userGender" value="hidden" checked>不顯示</label>
+            </div>
+            <div class="q1">
+                <!-- 複選控制項 -->
+                <span class="t1">興趣：</span>
+                <label><input type="checkbox" name="userInterest" value="游泳">游泳</label>
+                <label><input type="checkbox" name="userInterest" value="閱讀" checked>閱讀</label>
+                <label><input type="checkbox" name="userInterest" value="電影">電影</label>
+                <label><input type="checkbox" name="userInterest" value="音樂" checked>音樂</label>
+            </div>
+            <div class="q1">
+                <!-- 下拉式選單 -->
+                <label for="myCity" class="t1">縣市：</label>
+                <select name="userCity" id="myCity">
+                    <option value="基隆市">基隆市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="台北市">台北市</option>
+                    <option value="高雄市" selected>高雄市</option>
+                    <option value="台南市">台南市</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>其他</legend>
+            <div class="q1">
+                <!-- 多行文字控制項 -->
+                <label for="myMemo" class="t1">備忘錄：</label>
+                <textarea name="userMemo" id="myMemo" cols="30" rows="10" placeholder="請輸入文字，最常不可超過500字。"></textarea>
+            </div>
+            <div class="q1">
+                <!-- 檔案上傳 -->
+                <label for="myAvatar">大頭貼上傳：</label>
+                <input type="file" name="userAvatar" id="myAvatar" multiple>
+            </div>
+        </fieldset>
         <div class="btn1">
             <input type="submit" value="送出">
             <input type="reset" value="清除">
