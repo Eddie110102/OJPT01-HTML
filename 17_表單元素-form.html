@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>表單元素 form</title>
+    <style>
+        .q1{
+            width: 450px;
+            border-bottom: 2px dashed gray;
+            padding-bottom: 20px;
+            margin: 20px;
+        }
+        .t1{
+            /* background-color: pink; */
+            float: left;
+            width: 100px;
+            text-align: right;
+        }
+        .btn1{
+            width: 450px;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <form action="#" method="get" enctype="application/x-www-form-urlencoded">
-        <!-- 單行文字控制項 -->
-        <label for="myName">姓名：</label>
-        <input type="text" name="userName" id="myName" value="王大明" placeholder="請輸入您的姓名" >
-        <br>
-        <!-- 密碼輸入控制項 -->
-        <label for="myPassword">密碼：</label>
-        <input type="password" name="userPassword" id="myPassword" value="123456" placeholder="請輸入密碼" maxlength="10" minlength="6">
-        <br>
-        <!-- 多行文字輸入控制項 -->
-        <label for="myMemo">備忘錄：</label>
-        <textarea name="userMemo" id="myMemo" cols="30" rows="10" placeholder="請輸入文字，最常不可超過500字。">預設內容文字</textarea>
+        <div class="q1">
+            <!-- 單行文字控制項 -->
+            <label for="myName" class="t1">姓名：</label>
+            <input type="text" name="userName" id="myName" value="" placeholder="請輸入您的姓名" >
+        </div>
+        <div class="q1">
+            <!-- 密碼控制項 -->
+            <label for="myPassword" class="t1">密碼：</label>
+            <input type="password" name="userPassword" id="myPassword" value="" placeholder="請輸入密碼" maxlength="10" minlength="6">
+        </div>
+        <div class="q1">
+            <!-- 多行文字控制項 -->
+            <label for="myMemo" class="t1">備忘錄：</label>
+            <textarea name="userMemo" id="myMemo" cols="30" rows="10" placeholder="請輸入文字，最常不可超過500字。"></textarea>
+        </div>
+        <div class="btn1">
+            <input type="submit" value="送出">
+            <input type="reset" value="清除">
+            <input type="button" value="一般按鈕" disabled>
+            <button type="button">一般按鈕</button>
+        </div>
     </form>
 </body>
 </html>
