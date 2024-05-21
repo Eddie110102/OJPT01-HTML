@@ -44,6 +44,32 @@
             <label for="myMemo" class="t1">備忘錄：</label>
             <textarea name="userMemo" id="myMemo" cols="30" rows="10" placeholder="請輸入文字，最常不可超過500字。"></textarea>
         </div>
+        <div class="q1">
+            <!-- 單選控制項 -->
+            <span class="t1">性別：</span>
+            <label><input type="radio" name="userGender" value="male">男性</label>
+            <label><input type="radio" name="userGender" value="female">女性</label>
+            <label><input type="radio" name="userGender" value="hidden" checked>不顯示</label>
+        </div>
+        <div class="q1">
+            <!-- 複選控制項 -->
+            <span class="t1">興趣：</span>
+            <label><input type="checkbox" name="userInterest" value="游泳">游泳</label>
+            <label><input type="checkbox" name="userInterest" value="閱讀" checked>閱讀</label>
+            <label><input type="checkbox" name="userInterest" value="電影">電影</label>
+            <label><input type="checkbox" name="userInterest" value="音樂" checked>音樂</label>
+        </div>
+        <div class="q1">
+            <!-- 下拉式選單 -->
+            <label for="myCity" class="t1">縣市：</label>
+            <select name="userCity" id="myCity">
+                <option value="基隆市">基隆市</option>
+                <option value="新北市">新北市</option>
+                <option value="台北市">台北市</option>
+                <option value="高雄市" selected>高雄市</option>
+                <option value="台南市">台南市</option>
+            </select>
+        </div>
         <div class="btn1">
             <input type="submit" value="送出">
             <input type="reset" value="清除">
