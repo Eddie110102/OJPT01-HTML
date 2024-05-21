@@ -31,12 +31,29 @@
         <input type="tel" name="tel" maxlength="10" pattern="^[0][9]\d{8}$">
         <br>
         <label for="">url:</label>
-        <input type="url" name="url">
+        <input type="url" name="url" value="https://">
         <br>
         <label for="">search:</label>
         <input type="search" name="search">
+        <hr>
+        <h2>其他控制項</h2>
+        <label for="">color:</label>
+        <input type="color" name="color" value="#162A87">
+        <br>
+        <label for="">range:</label>
+        <input type="range" name="range" id="range" min="0" max="100" step="10" value="20">
+        <span id="rangeOutput"></span>
+        <br>
+        <label for="">number:</label>
+        <input type="number" name="number" min="0" max="100" step="10" value="20">
         <br>
         <input type="submit" value="送出">
     </form>
+
+    <script>
+        range.addEventListener('input',()=>{
+            rangeOutput.innerText = range.value;
+        })
+    </script>
 </body>
 </html>
