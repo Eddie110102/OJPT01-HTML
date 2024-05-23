@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll To Top</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        .btn{
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border: 4px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        section:nth-child(odd){
+            background-color: pink;
+            height: 200vh;
+        }
+        section:nth-child(even){
+            background-color: yellowgreen;
+            height: 200vh;
+        }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <!-- 整個<div>都可以被點擊 -->
+    <a href="#header">
+        <div class="btn">Top</div>
+    </a>
+
+    <!-- 單純點擊文字 -->
+    <div><a href="">文字</a></div>
+</body>
+</html>
