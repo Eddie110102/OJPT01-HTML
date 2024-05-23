@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>語意結構 semantic layout</title>
+    <style>
+        nav{
+
+        }
+        /* class selector */
+        .nav{
+
+        }
+        .flexbox{
+            display: flex;
+        }
+        .flexbox main{
+            border: 2px solid black;
+            width: 70%;
+        }
+        .flexbox aside{
+            border: 2px solid black;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- logo -->
+        <img src="./images/Bulbasaur.jpg" alt="" height="50">
+
+        <!-- html5 -->
+        <nav>網站地圖、menu</nav>
+        <!-- html4 -->
+        <div class="navbar">網站地圖、menu</div>
+
+        <!-- 按鈕：登入/註冊/搜尋 -->
+        <div>
+            <a href="./01_HTML文件結構-skeleton.html">01</a>
+            <a href="./01_HTML文件結構-skeleton.html">02</a>
+            <a href="./01_HTML文件結構-skeleton.html">03</a>
+        </div>
+    </header>
+    <div class="flexbox">
+        <main>
+            main
+            <!-- 網頁最重要的內容 -->
+            <section>
+                <!-- 班級特色 -->
+            </section>
+            <section>
+                <!-- 課程介紹 -->
+            </section>
+            <section>
+                <!-- 相關資訊 -->
+            </section>
+        </main>
+        <aside>
+            aside
+            <!-- 廣告、推薦商品(文章/課程)、常見問題 -->
+        </aside>
+    </div>
+    <aside>
+        aside
+        <!-- 廣告、推薦商品(文章/課程)、常見問題 -->
+    </aside>
+    <aside>
+        aside
+        <!-- 廣告、推薦商品(文章/課程)、常見問題 -->
+    </aside>
+    <footer>
+        footer
+        <!-- 版權聲明、隱私權政策、完整網站地圖(提供功能)、社群連結...... -->
+    </footer>
+</body>
+</html>
