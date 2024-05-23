@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大頭貼</title>
+    <style>
+        img{
+            height: 200px;
+        }
+        .origin{
+            height: 200px;
+            width: 200px;
+            border: 5px solid red;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .origin img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>正方形</h2>
+    <img src="./images/pikachu.jpg" alt="">
+    <img src="./images/pikachu.jpg" alt="" class="origin">
+    <h2>長方形</h2>
+    <img src="./images/pineapple.jpg" alt="">
+    <img src="./images/pineapple.jpg" alt="" class="origin">
+
+    <h2>大頭貼</h2>
+    <div class="origin">
+        <img src="./images/pineapple.jpg" alt="">
+    </div>
+</body>
+</html>
