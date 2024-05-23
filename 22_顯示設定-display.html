@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顯示設定 display & visibility & overflow</title>
+    <style>
+        .target{
+            /* 在畫面中隱藏 display => 連這個元素本身佔據的位子都隱藏  */
+            /* display: none; */
+
+            /* 在畫面中隱藏 visibility => 這個元素本身的內容隱藏，但是會保留位子  */
+            visibility: hidden;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 5px solid red;
+
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>display + visibility</h2>
+    <h1>h1標題元素</h1>
+    <h2 class="target">h2標題元素</h2>
+    <h3>h3標題元素</h3>
+
+    <h2>overflow顯示設定</h2>
+    <div class="box">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quia iure cupiditate, saepe, impedit ipsa tempora laborum ullam aliquam fugiat quidem velit voluptas error recusandae sit libero blanditiis, fugit quam!
+        Ex eos ullam suscipit fuga minima accusantium excepturi quasi dolor molestias maxime cum voluptates deleniti architecto vitae, incidunt velit ducimus similique iure perspiciatis! Laborum praesentium veniam molestias modi vel optio?
+        Vel, nihil tempore expedita, provident molestiae fuga minus itaque laudantium odit quasi eveniet voluptatem debitis! Pariatur ab nisi quam optio omnis dolor amet! Aperiam explicabo, dignissimos perferendis fugiat delectus animi.
+        Autem tempora, non necessitatibus voluptates eligendi quae vel placeat amet quam, eum similique suscipit, quaerat repellat quisquam. Vitae, cupiditate tenetur dolores, quidem error explicabo voluptatibus, harum iste sapiente doloremque ex.
+        Aspernatur omnis voluptates doloremque odio excepturi beatae aut, libero possimus rem fugiat quod voluptate amet! Illum nam ipsam culpa saepe beatae totam, id incidunt aperiam maiores at ratione pariatur assumenda.
+        Iste, illo sapiente. Illo natus doloribus doloremque aperiam aliquam commodi non quidem aspernatur sapiente inventore facere, quod cum, magni vel numquam corrupti dolorum tenetur labore reiciendis. Reprehenderit corrupti cupiditate quidem?
+        Ducimus sed sunt esse nostrum commodi aliquid temporibus laboriosam dolor facere quibusdam. Cupiditate inventore nisi dolorem provident tempora, odio in tempore, vel impedit atque asperiores hic ducimus modi? Sunt, similique!
+        Rerum quos hic maiores fuga totam, tempore ipsam praesentium inventore. Quos porro facilis ipsum voluptatum, eligendi quis earum maxime dolor ullam iusto unde iste accusantium alias et? Qui, cumque atque.
+        Quis a est nesciunt soluta impedit aperiam commodi quaerat, dolorem placeat non ex qui quod ad id eum enim vitae aliquid laboriosam atque, minus autem. Sequi dicta non deleniti explicabo.
+        Expedita, harum et, quasi quas iste error quia repellendus dolor ex doloremque necessitatibus hic itaque mollitia accusantium dolorum autem rem. Deleniti facilis consequatur totam aut! Illo alias laboriosam minima delectus!</p>
+    </div>
+</body>
+</html>
