@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位方式 position</title>
+    <style>
+        .r{
+            border: 1px solid blue;
+            background-color: lightblue;
+            /* 定位方式 */
+            position: relative;
+            /* top/bottom */
+            top: 200px;
+            /* left/right */
+            left: 500px;
+        }
+        .a{
+            border: 2px solid green;
+            background-color: yellowgreen;
+            position: absolute;
+
+            top: 500px;
+            left: 200px;
+        }
+        .f{
+            border: 2px solid red;
+            background-color: pink;
+            position: fixed;
+            width: 100px;
+            height: 100px;
+
+            right: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="r">relative元素</div>
+    <div class="a">absolute元素</div>
+    <div class="f">fixed元素</div>
+    <div class="s">static元素</div>
+
+    <main>
+        <section class="r">
+            <h2>section</h2>
+            <img src="" alt="">
+            <p class="a">absolute元素</p>
+        </section>
+    </main>
+
+    <div style="height: 200vh;"></div>
+</body>
+</html>
